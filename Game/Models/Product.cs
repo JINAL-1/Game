@@ -20,6 +20,7 @@ namespace Game.Models
         public double Price { get; set; }
 
         [Display(Name="Category")]
+        //It is an alias or a name that appears on the screen as Category insead of CategoryId
         public int CategoryId { get; set; }
 
         public string Photo { get; set; }

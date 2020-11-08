@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Game.Data;
 using Game.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Game.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
+       
         private readonly ApplicationDbContext _context;
 
         public CategoriesController(ApplicationDbContext context)
@@ -26,6 +29,8 @@ namespace Game.Controllers
         }
 
         // GET: Categories/Details/5
+
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
